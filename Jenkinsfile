@@ -19,8 +19,7 @@ pipeline {
         stage('deploy in tomcat') {
             steps {
                 echo 'deplyoing .war in tomcat'
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://ec2-54-175-3-37.compute-1.amazonaws.com:8080/')], contextPath: 'kalyan', war: '**/*.war'
-                
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://ec2-34-233-124-6.compute-1.amazonaws.com:8080/')], contextPath: 'brandnew', war: '**/*.war'
             }
         }        
     }

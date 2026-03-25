@@ -1,5 +1,5 @@
 <html> 
 
-<h1> JENKINS IS NOW CONFIGURED  </h1> 
+<h1> WEBHOOK TRAIL 1 WITH FREESTYLE </h1> 
 
 </html>

@@ -17,12 +17,12 @@
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>NexusRepo</id>
-		    <url>http://34.201.119.102:8081/repository/kalyan-repo-snapshot/</url>
+		    <url>http://52.86.11.152:8081/repository/kalyan-repo-snapshot/</url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>NexusRepo</id>
-		    <url>http://34.201.119.102:8081/repository/kalyan-repo-release/</url>
+		    <url>http://52.86.11.152:8081/repository/kalyan-repo-release/</url>
 		</repository>
   	</distributionManagement>
     

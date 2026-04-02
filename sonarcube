@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven_3.9.14'
+        
+    }
+    stages {
+        
+        stage('clone scm') {
+            steps {
+                echo 'cloning sc from git repo'
+               git branch: 'main', url: 'https://github.com/Kalyanbathini3546/jenkins_files.git'
+            }
+        }
+        
+        stage ('sonarqube') {
+            steps {
+                echo 'stage scans the code'
+                sh ''' mvn sonar:sonar \
+                      -Dsonar.host.url=http://ec2-34-204-51-12.compute-1.amazonaws.com:9000 \
+                      -Dsonar.token=squ_ddd6584f70b619906fc5c3c1908482f50f17aa9a'''
+                
+            }
+        }
+        
+        
+        stage('deploy in tomcat') {
+            steps {
+                echo 'deplyoing .war in tomcat'
+              //  deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url:'http://ec2-54-211-188-14.compute-1.amazonaws.com:8082/')], contextPath: 'kalyan', war: '**/*.war'
+            }
+        }        
+    }
+}

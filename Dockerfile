@@ -1,5 +1,3 @@
-
-
 FROM maven AS build
 RUN mkdir /opt/tomcat
 WORKDIR /opt/tomcat
